@@ -7,7 +7,8 @@ def list_audio_devices():
     p = pyaudio.PyAudio()
     info = p.get_host_api_info_by_index(0)
     numdevices = info.get('deviceCount')
-    
+
+    print("*******************************************************************************************************************")
     print("Available audio devices:")
     for i in range(0, numdevices):
         device_info = p.get_device_info_by_host_api_device_index(0, i)
@@ -53,7 +54,9 @@ if __name__ == "__main__":
     list_audio_devices()
     
     # Specify the device index for the microphone
+    print("*******************************************************************************************************************")
     mic_index = int(input("Enter the device index for the microphone: "))
+    print("*******************************************************************************************************************")
     
     # Option to process existing audio file
     input_file = "path/to/your/audiofile.flac"  # Replace with your audio file path
